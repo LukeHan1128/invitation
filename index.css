@@ -2,3 +2,36 @@ body{
   margin: auto;
   max-width: 640px;
 }
+.row{ display: none; }
+.col{ padding: 0; }
+
+img.img,
+.band{
+  border-left: 1px solid rgb(225,225,225);
+  border-right: 1px solid rgb(225,225,225);
+  box-shadow: 20px 15px 30px rgb(225 225 225);
+  display: block;
+  width: 100%;
+}
+
+.band{ background-color: rgb(255,235,235); }
+.band.title{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.band .material-icons{
+  color: rgb(20,45,100);
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 13px;
+  text-align: center;
+}
+.band p{
+  color: rgb(20,45,100);
+  margin: 0;
+  text-align: center;
+}
+p.cpright{
+  color: white;
+  font-size: 10px;
+}
