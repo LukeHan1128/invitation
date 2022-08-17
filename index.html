@@ -6,10 +6,10 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="bootstrap/bootstrap_5.2.0.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
+  <link href="index.css?version=220817_2020" rel="stylesheet">
 
   <script src="bootstrap/bootstrap_5.2.0.bundle.js"></script>
-  <script src="index.js"></script>
+  <script src="index.js?version=220817_2020"></script>
 
   <title>Invitation Letter</title>
 </head>
@@ -19,8 +19,21 @@
       <div class="col">
         <img class="img" src="img/invitation_001.jpeg">
 
-        <div class="band title p-5">
-          <p>WEDDING INVITATION</p>
+        <div class="band p-5">
+          <p class="subTxt">Wedding ceremony venue</p>
+          <hr class="m-0">
+          <p class="titleTxt">Location</p>
+        </div>
+
+        <div class="band">
+          <div id="wMap" class="map"></div>
+        </div>
+
+        <div class="band p-5">
+          <i class="material-icons">place</i>
+          <p>CHURCH OF CHRIST (IGLESIA NI CRISTO)</p>
+          <p>53 GENERAL MAXILOM AVE, CEBU CITY 6000</p>
+          <hr class="mt-4 mb-0">
         </div>
 
         <img class="img" src="img/invitation_002.jpeg">
@@ -37,46 +50,71 @@
 
         <img class="img" src="img/invitation_004.jpeg">
 
-        <div class="band title p-5">
-          <p>Location</p>
+        <div class="band p-5">
+          <p class="subTxt">Wedding reception</p>
+          <hr class="m-0">
+          <p class="titleTxt">Location</p>
         </div>
 
-        <div id="googleMap" style="width: 100%;height: 700px;"></div>
+        <div class="band">
+          <div id="hMap" class="map"></div>
+        </div>
 
-        <div class="band pt-5">
+        <div class="band p-5 pb-0">
           <i class="material-icons">place</i>
-          <p>CHURCH OF CHRIST (IGLESIA NI CRISTO)</p>
-          <p>53 GENERAL MAXILOM AVE, CEBU CITY 6000</p>
+          <p>F. Cabahug, cor Pres. Quezon St,</p>
+          <p>CEBU CITY</p>
 
-          <p class="cpright pt-5 pb-3">
+          <hr class="mt-4 mb-0">
+        </div>
+
+        <div class="band p-5 pb-0 korea">
+          <p class="titleTxt">마음 전해주실 곳</p>
+          <br/>
+          <p>"신랑신부에게 축하의 마음을 전해주세요"</p>
+		  <br/>
+          <input id="info"/>
+          <p>
+            <input type="button" id="infoBtn" class="btn btn-outline-info"
+                   onclick="copy_to_clipboard()" value="계좌번호" disabled="disabled"/>
+          </p>
+
+          <hr class="mt-4 mb-0">
+        </div>
+
+        <div class="band p-3">
+          <p class="cpright">
             &#60;Copyright 2022. LukeHan. All rights reserved&#62;
           </p>
         </div>
       </div>
     </div>
-
-    <div class="row korea">
-      <div class="col">
-      </div>
-    </div>
   </div>
 
   <script>
-   function myMap(){
-      var point = {lat: 10.3117964, lng: 123.8994633};
-      var mapOptions = {
-            center: point,
-            disableDefaultUI: true,
-            zoom: 17,
-            zoomControl: true
+  function myMap(){
+      var wPoint = {lat: 10.3117964, lng: 123.8994633};
+      var hPoint = {lat: 10.3216866, lng: 123.9136067};
+
+      var wMapOptions = {
+            center: wPoint
+            , disableDefaultUI: true
+            , zoom: 17
+            , zoomControl: true
       };
 
-      var map = new google.maps.Map(
-             document.getElementById("googleMap")
-            , mapOptions);
+      var hMapOptions = {
+            center: hPoint
+            , disableDefaultUI: true
+            , zoom: 17
+            , zoomControl: true
+      };
 
-      var marker = new google.maps.Marker({position: point, map: map});
-   }
+      var wMap = new google.maps.Map(document.getElementById("wMap"), wMapOptions);
+      var hMap = new google.maps.Map(document.getElementById("hMap"), hMapOptions);
+      var wMarker = new google.maps.Marker({position: wPoint, map: wMap});
+      var hMarker = new google.maps.Marker({position: hPoint, map: hMap});
+  }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvijm7uS2zbf4iUzP1xzvNZCaF5dZVowk&callback=myMap"></script>
 </body>

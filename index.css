@@ -4,8 +4,6 @@ body{
 }
 .col{ padding: 0; }
 
-.korea{ display: none; }
-
 img.img,
 .band{
   border-left: 1px solid rgb(225,225,225);
@@ -37,7 +35,7 @@ p.titleTxt{
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 5px;
-  line-height: 25px;
+  line-height: 28px;
 }
 
 p.cpright{
@@ -50,5 +48,11 @@ div.map{
   width: 100%;
 }
 
-#info{ display: none; }
+#info{
+  left: -100px;
+  opacity: 0;
+  position: absolute;
+}
 .btn-outline-info:hover{ color: #fff; }
+
+.korea{ display: none; }
