@@ -3,11 +3,12 @@ window.onload = function(){
   var type = navigator.appName;
   var lang;
 
-  if(type == 'Netscape')
+  if(type == 'Netscape'){
     lang = navigator.language
-  else
+  }
+  else{
     lang = navigator.userLanguage
-
+  }
   lang = lang.substr(0,2)
 
   if(lang == 'ko'){
@@ -20,8 +21,7 @@ window.onload = function(){
 }
 
 function get_account(){
-  // get info
-  var infoVal = '국민은행';
+  var infoVal = account;
 
   // set copy account button
   var info = document.querySelector('#info');
