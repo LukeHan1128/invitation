@@ -2,8 +2,9 @@ body{
   margin: auto;
   max-width: 640px;
 }
-.row{ display: none; }
 .col{ padding: 0; }
+
+.korea{ display: none; }
 
 img.img,
 .band{
@@ -31,7 +32,23 @@ img.img,
   margin: 0;
   text-align: center;
 }
+p.subTxt{ font-size: 0.8rem; }
+p.titleTxt{
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 25px;
+}
+
 p.cpright{
   color: white;
   font-size: 10px;
 }
+
+div.map{
+  height: 400px;
+  width: 100%;
+}
+
+#info{ display: none; }
+.btn-outline-info:hover{ color: #fff; }
