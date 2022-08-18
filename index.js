@@ -18,6 +18,11 @@ window.onload = function(){
   else{
     document.querySelector('.korea').style.display = 'none';
   }
+
+  // check hits
+  if((new URLSearchParams(window.location.search)).get('isHits') == 'true'){
+    document.querySelector('.cpright > a').style.display = 'block';
+  }
 }
 
 function get_account(){
