@@ -42,6 +42,7 @@ p.cpright{
   color: white;
   font-size: 10px;
 }
+p.cpright > a{ display: none; }
 
 div.map{
   height: 400px;
