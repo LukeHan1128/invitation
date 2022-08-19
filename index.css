@@ -2,7 +2,14 @@ body{
   margin: auto;
   max-width: 640px;
 }
+.container > .row > .col{ position: relative; }
 .col{ padding: 0; }
+
+#language{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
 img.img,
 .band{
@@ -56,4 +63,5 @@ div.map{
 }
 .btn-outline-info:hover{ color: #fff; }
 
+.english,
 .korea{ display: none; }

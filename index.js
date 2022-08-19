@@ -4,24 +4,61 @@ window.onload = function(){
   var lang;
 
   if(type == 'Netscape'){
-    lang = navigator.language
+    lang = navigator.language;
   }
   else{
-    lang = navigator.userLanguage
+    lang = navigator.userLanguage;
   }
-  lang = lang.substr(0,2)
-
-  if(lang == 'ko'){
-    document.querySelector('.korea').style.display = 'block';
-    get_account();
-  }
-  else{
-    document.querySelector('.korea').style.display = 'none';
-  }
+  lang = lang.substr(0,2);
 
   // check hits
-  if((new URLSearchParams(window.location.search)).get('isHits') == 'true'){
+  var params = new URLSearchParams(window.location.search);
+  if(params.get('isHits') == 'true'){
     document.querySelector('.cpright > a').style.display = 'block';
+  }
+
+  if(params.get('language') == 'en'){
+    lang = 'en';
+  }
+  if(params.get('language') == 'ko'){
+    lang = 'ko';
+  }
+
+  document.querySelector('#language').addEventListener('change', function(){
+    set_language(this.value);
+  });
+
+  // set display
+  set_language(lang);
+
+  var select = document.querySelector('#language');
+
+  for(var i=0; i<select.length ;++i){
+    if(select[i].value == lang) select[i].selected = true
+  }
+}
+
+function set_language(lang){
+  var eList = document.querySelectorAll('.english');
+  var kList = document.querySelectorAll('.korea');
+
+  var eType = 'none';
+  var kType = 'none';
+
+  if(lang == 'ko'){
+    eType = 'none';
+    kType = 'block';
+  }
+  else{
+    eType = 'block';
+    kType = 'none';
+  }
+
+  for(var i=0; i<kList.length ;++i){
+    kList[i].style.display = kType;
+  }
+  for(var i=0; i<eList.length ;++i){
+    eList[i].style.display = eType;
   }
 }
 
