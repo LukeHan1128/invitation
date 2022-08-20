@@ -48,6 +48,7 @@ function set_language(lang){
   if(lang == 'ko'){
     eType = 'none';
     kType = 'block';
+    get_account();
   }
   else{
     eType = 'block';
