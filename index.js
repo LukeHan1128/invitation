@@ -75,9 +75,11 @@ function get_account(){
 
 function copy_to_clipboard(){
   var info = document.querySelector('#info').value;
+  /*
   var cpTxt = document.getElementById('info');
   cpTxt.select();
   document.execCommand('Copy');
+  */
 
-  alert(info + '\n\n복사하였습니다.');
+  alert(info /* + '\n\n복사하였습니다.' */);
 }
